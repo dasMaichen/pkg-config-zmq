@@ -3,13 +3,13 @@ pkg_config = read_config('pkg_config', 'path', 'pkg-config')
 genrule(
   name = 'preprocessor-flags',
   out = 'out.txt',
-  cmd = pkg_config + ' zmq --cflags > $OUT',
+  cmd = pkg_config + ' libzmq --cflags > $OUT',
 )
 
 genrule(
   name = 'linker-flags',
   out = 'out.txt',
-  cmd = pkg_config + ' zmq --libs > $OUT',
+  cmd = pkg_config + ' libzmq --libs > $OUT',
 )
 
 prebuilt_cxx_library(
